@@ -22,11 +22,15 @@
     <!-- Chart.js (para os gráficos animados) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Previne scroll horizontal causado por animações */
         }
         .gold-text {
             background: linear-gradient(135deg, #d4af37 0%, #f9e423 100%);
@@ -36,9 +40,20 @@
         }
         .gold-gradient {
             background: linear-gradient(135deg, #d4af37 0%, #f9e423 100%);
+            transition: transform 0.3s ease;
+        }
+        .gold-gradient:hover {
+            transform: translateY(-2px);
         }
         .mm-gradient {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(270deg, #000000, #1a1a1a, #000000);
+            background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/fundo.avif') center/cover no-repeat;
@@ -49,6 +64,12 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .service-card .service-icon {
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: rotate(15deg) scale(1.1);
         }
         .case-study-card {
             transition: transform 0.3s ease;
@@ -131,16 +152,22 @@
         <section id="home" class="hero-section min-h-screen flex items-center justify-center pt-24 pb-12 text-center text-white relative">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="max-w-3xl mx-auto">
-                    <div class="inline-block bg-blue-500/80 text-white px-4 py-2 rounded-full mb-4 text-sm font-semibold">
+                    <div data-aos="fade-down" class="inline-block bg-blue-500/80 text-white px-4 py-2 rounded-full mb-4 text-sm font-semibold">
                         <span class="flex items-center"><i class="fas fa-bolt mr-2"></i>ALTA PERFORMANCE</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-                        Pare de desperdiçar dinheiro com <span class="gold-text">tráfego que não converte</span>
+                        <span data-aos="fade-up" data-aos-delay="100">Pare</span>
+                        <span data-aos="fade-up" data-aos-delay="150">de</span>
+                        <span data-aos="fade-up" data-aos-delay="200">desperdiçar</span>
+                        <span data-aos="fade-up" data-aos-delay="250">dinheiro</span>
+                        <span data-aos="fade-up" data-aos-delay="300">com</span>
+                        <br class="hidden md:block">
+                        <span class="gold-text" data-aos="fade-up" data-aos-delay="400">tráfego que não converte</span>
                     </h1>
-                    <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                    <p data-aos="fade-up" data-aos-delay="600" class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
                         Na MM Digital, cada clique conta. Gestão de tráfego pago e criativos que realmente vendem.
                     </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div data-aos="fade-up" data-aos-delay="800" class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="#contact" class="gold-gradient w-full sm:w-auto text-black font-bold px-8 py-3 rounded-full hover:opacity-90 transition text-lg">
                             Solicitar Proposta
                         </a>
@@ -155,10 +182,10 @@
         <section id="about" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-16">
-                    <div class="md:w-5/12 lg:w-4/12 flex-shrink-0">
+                    <div data-aos="fade-right" class="md:w-5/12 lg:w-4/12 flex-shrink-0">
                         <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/msmadureira.png" alt="Marcelo Madureira" class="rounded-lg shadow-xl w-full h-auto">
                     </div>
-                    <div class="md:w-7/12 lg:w-6/12 text-center md:text-left">
+                    <div data-aos="fade-left" class="md:w-7/12 lg:w-6/12 text-center md:text-left">
                         <h2 class="text-3xl sm:text-4xl font-bold mb-6">
                             Sobre a <span class="gold-text">MM Digital</span>
                         </h2>
@@ -188,31 +215,31 @@
 
         <section id="services" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-16 max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Nossos <span class="gold-text">Serviços</span></h2>
                     <p class="text-lg text-gray-600">Soluções completas para alavancar seu negócio no digital.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
-                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-bullseye text-2xl text-black"></i></div>
+                    <div data-aos="fade-up" data-aos-delay="100" class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6 service-icon"><i class="fas fa-bullseye text-2xl text-black"></i></div>
                         <h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
                         <p class="text-gray-600 mb-4 text-base">Campanhas otimizadas no Meta, TikTok e Google Ads para máxima conversão.</p>
                         <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
-                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
-                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-users text-2xl text-black"></i></div>
+                    <div data-aos="fade-up" data-aos-delay="200" class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6 service-icon"><i class="fas fa-users text-2xl text-black"></i></div>
                         <h3 class="text-xl font-bold mb-3">Social Media</h3>
                         <p class="text-gray-600 mb-4 text-base">Criação de conteúdo e gestão com linguagem estratégica para engajar seu público.</p>
                         <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
-                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
-                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-photo-film text-2xl text-black"></i></div>
+                    <div data-aos="fade-up" data-aos-delay="300" class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6 service-icon"><i class="fas fa-photo-film text-2xl text-black"></i></div>
                         <h3 class="text-xl font-bold mb-3">Criativos de Alta Conversão</h3>
                         <p class="text-gray-600 mb-4 text-base">Reels, VSLs, e artes profissionais para campanhas que realmente vendem.</p>
                         <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
-                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
-                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-chart-line text-2xl text-black"></i></div>
+                    <div data-aos="fade-up" data-aos-delay="400" class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6 service-icon"><i class="fas fa-chart-line text-2xl text-black"></i></div>
                         <h3 class="text-xl font-bold mb-3">Consultoria Estratégica</h3>
                         <p class="text-gray-600 mb-4 text-base">Diagnóstico completo e plano de crescimento personalizado para seu negócio.</p>
                         <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
@@ -221,42 +248,39 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE RESULTADOS ATUALIZADA COM GRÁFICO DE BARRAS -->
         <section id="numbers" class="py-16 md:py-24 mm-gradient text-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                 <div class="text-center max-w-4xl mx-auto">
+                 <div data-aos="fade-up" class="text-center max-w-4xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Impacto Real, Resultados Mensuráveis</h2>
                     <p class="text-lg text-gray-300 mb-16">Não falamos apenas de marketing, falamos de crescimento. Nossos números comprovam.</p>
                 </div>
                 
-                <!-- Gráfico de Barras -->
-                <div class="mb-16">
+                <div data-aos="fade-up" data-aos-delay="200" class="mb-16">
                     <canvas id="main-chart"></canvas>
                 </div>
 
-                <!-- Contadores Animados -->
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="100">
                         <p id="roi-counter" class="text-4xl font-extrabold gold-text">0x</p>
                         <p class="mt-2 text-sm text-gray-300">Média de ROI</p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="200">
                         <p id="cpl-counter" class="text-4xl font-extrabold gold-text">0%</p>
                         <p class="mt-2 text-sm text-gray-300">Redução CPL</p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="300">
                         <p id="conversion-counter" class="text-4xl font-extrabold gold-text">0%</p>
                         <p class="mt-2 text-sm text-gray-300">Aumento Conversão</p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="400">
                         <p id="leads-counter" class="text-4xl font-extrabold gold-text">0</p>
                         <p class="mt-2 text-sm text-gray-300">Leads Gerados/Mês</p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="500">
                         <p id="creatives-counter" class="text-4xl font-extrabold gold-text">0</p>
                         <p class="mt-2 text-sm text-gray-300">Criativos Criados</p>
                     </div>
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="600">
                         <p id="revenue-counter" class="text-4xl font-extrabold gold-text">R$0</p>
                         <p class="mt-2 text-sm text-gray-300">Faturamento/Mês</p>
                     </div>
@@ -266,12 +290,12 @@
 
         <section id="cases" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-16 max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Cases de <span class="gold-text">Sucesso</span></h2>
                     <p class="text-lg text-gray-600">Resultados reais que entregamos para nossos clientes.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="https://mm-digital.netlify.app/casechina" target="_blank" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                    <a href="https://mm-digital.netlify.app/casechina" target="_blank" data-aos="fade-up" data-aos-delay="100" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
                         <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/6.png" alt="Prato de comida chinesa do China Difang" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">China Difang Delivery</h3>
@@ -280,7 +304,7 @@
                             <div class="mt-4 text-yellow-600 font-semibold">Ver o case completo <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </a>
-                    <a href="https://mm-digital.netlify.app/clube" target="_blank" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                    <a href="https://mm-digital.netlify.app/clube" target="_blank" data-aos="fade-up" data-aos-delay="200" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
                         <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/clubeprincipal.png" alt="Dashboard de resultados do Clube da Automação" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Clube da Automação Web</h3>
@@ -289,7 +313,7 @@
                             <div class="mt-4 text-yellow-600 font-semibold">Ver o case completo <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </a>
-                    <a href="https://mm-digital.netlify.app/paodahora" target="_blank" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+                    <a href="https://mm-digital.netlify.app/paodahora" target="_blank" data-aos="fade-up" data-aos-delay="300" class="case-study-card block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
                         <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/pao5.png" alt="Produtos da padaria Pão da Hora" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Pão da Hora Sobradinho</h3>
@@ -304,12 +328,12 @@
 
         <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-16 max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">O que dizem <span class="gold-text">nossos clientes</span></h2>
                     <p class="text-lg text-gray-600">Depoimentos reais de quem já transformou seu negócio conosco.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl p-8 shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Bruna Souza" class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
@@ -320,7 +344,7 @@
                         <p class="text-gray-700 italic">"Fechar com a MM foi a melhor decisão do meu negócio. Não fiquei mais sem clientes. O atendimento é próximo e os resultados aparecem rápido."</p>
                         <div class="flex mt-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl p-8 shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Lira" class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
@@ -331,7 +355,7 @@
                         <p class="text-gray-700 italic">"O Marcelo entende de mídia como poucos. Além de estrategista, virou parte da minha equipe. Super recomendo a MM Digital para quem quer resultados."</p>
                         <div class="flex mt-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-xl p-8 shadow-lg">
                         <div class="flex items-center mb-4">
                             <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Juliane Ramos" class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
@@ -348,12 +372,12 @@
 
         <section id="blog" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-16 max-w-3xl mx-auto">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Conteúdo <span class="gold-text">Exclusivo</span></h2>
                     <p class="text-lg text-gray-600">Artigos para você dominar o marketing digital.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                    <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">5 erros que estão fazendo você perder dinheiro com tráfego pago</h3>
@@ -361,7 +385,7 @@
                             <a href="https://mm-digital.netlify.app/5errosperdertrafego" target="_blank" class="text-yellow-600 font-semibold hover:underline">Ler artigo <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                    <div data-aos="fade-up" data-aos-delay="200" class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
                         <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Criativos que convertem: como montar um Reels matador</h3>
@@ -369,7 +393,7 @@
                             <a href="https://mm-digital.netlify.app/reelmatador" target="_blank" class="text-yellow-600 font-semibold hover:underline">Ler artigo <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                    <div data-aos="fade-up" data-aos-delay="300" class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
                         <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Como atrair mais clientes no Instagram com estratégia</h3>
@@ -505,9 +529,19 @@
         </div>
     </footer>
 
-    <!-- Scripts de Navegação -->
+    <!-- AOS - Animate On Scroll Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Scripts de Navegação e Animações -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa a biblioteca de animação ao rolar
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+            });
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const header = document.getElementById('header');
@@ -626,7 +660,7 @@
                         observer.unobserve(entry.target); // Anima apenas uma vez
                     }
                 });
-            }, { threshold: 0.1 }); // A animação começa quando 10% da seção estiver visível
+            }, { threshold: 0.1 });
 
             const numbersSection = document.getElementById("numbers");
             observer.observe(numbersSection);
@@ -652,7 +686,7 @@
                 const data = {
                     labels: ['ROI', 'Redução CPL', 'Aumento Conversão', 'Leads/Mês', 'Criativos', 'Faturamento (mil)'],
                     datasets: [{
-                        data: [6, 45, 80, 3500, 8459, 489000], // Valores reais para a escala logarítmica
+                        data: [6, 45, 80, 3500, 8459, 489000],
                         backgroundColor: [
                             'rgba(212, 175, 55, 0.7)',
                             'rgba(249, 228, 35, 0.7)',
@@ -677,7 +711,7 @@
                     type: 'bar',
                     data: data,
                     options: {
-                        indexAxis: 'y', // Gráfico de barras horizontais para melhor leitura
+                        indexAxis: 'y',
                         responsive: true,
                         animation: {
                             duration: 2000,
@@ -685,11 +719,11 @@
                         },
                         plugins: {
                             legend: { display: false },
-                            tooltip: { enabled: false } // Desabilitado para focar nos contadores abaixo
+                            tooltip: { enabled: false }
                         },
                         scales: {
                             x: {
-                                type: 'logarithmic', // Escala logarítmica para lidar com grandes diferenças de valores
+                                type: 'logarithmic',
                                 ticks: {
                                     color: 'rgba(255, 255, 255, 0.7)',
                                     callback: function(value, index, values) {
