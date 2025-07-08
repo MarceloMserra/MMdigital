@@ -346,9 +346,7 @@
                         <p class="text-lg text-gray-300 max-w-2xl mx-auto">Preencha o formulário abaixo ou, se preferir, agende uma reunião diretamente.</p>
                     </div>
                     
-                    <form action="https://formspree.io/f/mrbkwagk" method="POST" class="bg-black/50 rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-700/50">
-                        <input type="hidden" name="_next" value="https://mm-digital.netlify.app/obrigado.html">
-                        
+                    <form id="contact-form" action="https://formspree.io/f/mrbkwagk" method="POST" class="bg-black/50 rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-700/50">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label for="name" class="block mb-2 font-medium">Nome completo*</label>
@@ -455,7 +453,7 @@
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
                 <p>CNPJ: 45.901.148/0001-35 | Instagram: @mmdigital.ofc</p>
-                <p class="mt-2">© 2022 MM Digital. Todos os direitos reservados.</p>
+                <p class="mt-2">© 2025 MM Digital. Todos os direitos reservados.</p>
                 <div class="flex justify-center space-x-4 mt-4">
                     <a href="#" class="hover:text-yellow-400 transition">Política de Privacidade</a>
                     <a href="#" class="hover:text-yellow-400 transition">Termos de Uso</a>
@@ -516,6 +514,53 @@
         });
     </script>
 
+    <script>
+        var form = document.getElementById("contact-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault(); 
+          var status = document.createElement('div');
+          var data = new FormData(event.target);
+          
+          status.innerHTML = "Enviando...";
+          status.className = 'text-center text-yellow-400 mt-4';
+          form.appendChild(status);
+      
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Mensagem enviada com sucesso!";
+              status.className = 'text-center text-green-500 mt-4';
+              form.reset();
+              
+              setTimeout(() => {
+                window.location.href = "obrigado.html"; 
+              }, 1000);
+      
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                  status.innerHTML = "Oops! Ocorreu um problema ao enviar o formulário.";
+                }
+                status.className = 'text-center text-red-500 mt-4';
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! Ocorreu um problema de conexão.";
+            status.className = 'text-center text-red-500 mt-4';
+          });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
+    </script>
+    
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
