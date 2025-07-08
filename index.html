@@ -8,13 +8,19 @@
     <title>MM Digital - Marketing Digital de Alta Performance</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js (para os gráficos animados) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
         body {
@@ -210,6 +216,49 @@
                         <h3 class="text-xl font-bold mb-3">Consultoria Estratégica</h3>
                         <p class="text-gray-600 mb-4 text-base">Diagnóstico completo e plano de crescimento personalizado para seu negócio.</p>
                         <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE RESULTADOS ATUALIZADA COM GRÁFICO DE BARRAS -->
+        <section id="numbers" class="py-16 md:py-24 mm-gradient text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Impacto Real, Resultados Mensuráveis</h2>
+                    <p class="text-lg text-gray-300 mb-16">Não falamos apenas de marketing, falamos de crescimento. Nossos números comprovam.</p>
+                </div>
+                
+                <!-- Gráfico de Barras -->
+                <div class="mb-16">
+                    <canvas id="main-chart"></canvas>
+                </div>
+
+                <!-- Contadores Animados -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                    <div>
+                        <p id="roi-counter" class="text-4xl font-extrabold gold-text">0x</p>
+                        <p class="mt-2 text-sm text-gray-300">Média de ROI</p>
+                    </div>
+                    <div>
+                        <p id="cpl-counter" class="text-4xl font-extrabold gold-text">0%</p>
+                        <p class="mt-2 text-sm text-gray-300">Redução CPL</p>
+                    </div>
+                    <div>
+                        <p id="conversion-counter" class="text-4xl font-extrabold gold-text">0%</p>
+                        <p class="mt-2 text-sm text-gray-300">Aumento Conversão</p>
+                    </div>
+                    <div>
+                        <p id="leads-counter" class="text-4xl font-extrabold gold-text">0</p>
+                        <p class="mt-2 text-sm text-gray-300">Leads Gerados/Mês</p>
+                    </div>
+                    <div>
+                        <p id="creatives-counter" class="text-4xl font-extrabold gold-text">0</p>
+                        <p class="mt-2 text-sm text-gray-300">Criativos Criados</p>
+                    </div>
+                    <div>
+                        <p id="revenue-counter" class="text-4xl font-extrabold gold-text">R$0</p>
+                        <p class="mt-2 text-sm text-gray-300">Faturamento/Mês</p>
                     </div>
                 </div>
             </div>
@@ -456,7 +505,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts de Navegação -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -509,6 +558,7 @@
         });
     </script>
     
+    <!-- SCRIPT PARA ENVIO DO FORMULÁRIO COM AJAX -->
     <script>
         var form = document.getElementById("contact-form");
         
@@ -556,6 +606,116 @@
         form.addEventListener("submit", handleSubmit);
     </script>
     
+    <!-- SCRIPT PARA CONTADORES E GRÁFICO ANIMADOS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Anima os contadores
+                        animateCounter(document.getElementById("roi-counter"), 0, 6, 2000, '', 'x');
+                        animateCounter(document.getElementById("cpl-counter"), 0, 45, 2000, '', '%');
+                        animateCounter(document.getElementById("conversion-counter"), 0, 80, 2000, '+', '%');
+                        animateCounter(document.getElementById("leads-counter"), 0, 3500, 2000, '+');
+                        animateCounter(document.getElementById("creatives-counter"), 0, 8459, 2000, '+');
+                        animateCounter(document.getElementById("revenue-counter"), 0, 489, 2000, 'R$', ' mil');
+                        
+                        // Anima o gráfico de barras
+                        animateBarChart();
+
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            }, { threshold: 0.1 }); // A animação começa quando 10% da seção estiver visível
+
+            const numbersSection = document.getElementById("numbers");
+            observer.observe(numbersSection);
+
+            function animateCounter(obj, initVal, lastVal, duration, prefix = '', suffix = '') {
+                let startTime = null;
+                const step = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    let currentValue = Math.floor(progress * (lastVal - initVal) + initVal);
+                    obj.innerHTML = `${prefix}${currentValue.toLocaleString('pt-BR')}${suffix}`;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                       obj.innerHTML = `${prefix}${lastVal.toLocaleString('pt-BR')}${suffix}`;
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            function animateBarChart() {
+                const ctx = document.getElementById('main-chart').getContext('2d');
+                const data = {
+                    labels: ['ROI', 'Redução CPL', 'Aumento Conversão', 'Leads/Mês', 'Criativos', 'Faturamento (mil)'],
+                    datasets: [{
+                        data: [6, 45, 80, 3500, 8459, 489000], // Valores reais para a escala logarítmica
+                        backgroundColor: [
+                            'rgba(212, 175, 55, 0.7)',
+                            'rgba(249, 228, 35, 0.7)',
+                            'rgba(255, 255, 255, 0.7)',
+                            'rgba(212, 175, 55, 0.7)',
+                            'rgba(249, 228, 35, 0.7)',
+                            'rgba(255, 255, 255, 0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(212, 175, 55, 1)',
+                            'rgba(249, 228, 35, 1)',
+                            'rgba(255, 255, 255, 1)',
+                            'rgba(212, 175, 55, 1)',
+                            'rgba(249, 228, 35, 1)',
+                            'rgba(255, 255, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        indexAxis: 'y', // Gráfico de barras horizontais para melhor leitura
+                        responsive: true,
+                        animation: {
+                            duration: 2000,
+                            easing: 'easeInOutQuart'
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { enabled: false } // Desabilitado para focar nos contadores abaixo
+                        },
+                        scales: {
+                            x: {
+                                type: 'logarithmic', // Escala logarítmica para lidar com grandes diferenças de valores
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.7)',
+                                    callback: function(value, index, values) {
+                                        if (value === 1000000) return '1M';
+                                        if (value === 100000) return '100k';
+                                        if (value === 10000) return '10k';
+                                        if (value === 1000) return '1k';
+                                        if (value === 100) return '100';
+                                        if (value === 10) return '10';
+                                        return null;
+                                    }
+                                },
+                                grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            },
+                            y: {
+                                ticks: { color: 'rgba(255, 255, 255, 0.9)', font: { size: 14 } },
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- Tawk.to Chat (Lembre-se de trocar o ID) -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
