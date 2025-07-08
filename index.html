@@ -1,1517 +1,531 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<meta name="description" content="Agência de marketing digital especializada em tráfego pago, social media e criativos. Resultados reais para o seu negócio!">
-
-<title>MM Digital - Marketing Digital de Alta Performance</title>
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  .mm-gradient {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  }
-
-  .gold-text {
-    background: linear-gradient(135deg, #d4af37 0%, #f9e423 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/fundo.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-
-  .case-study-card {
-    transition: all 0.3s ease;
-  }
-
-  .case-study-card:hover {
-    transform: scale(1.03);
-  }
-
-  .testimonial-card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência de marketing digital especializada em tráfego pago, social media e criativos. Resultados reais para o seu negócio!">
+    <title>MM Digital - Marketing Digital de Alta Performance</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    .hero-section {
-      text-align: center;
-      padding-top: 6rem;
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    .hero-section h1 {
-      font-size: 2.5rem;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    .flex-wrap {
-      justify-content: center;
-    }
-  }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Customizado Mínimo para Efeitos Específicos */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-  .whatsapp-float {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25D366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
+        /* Gradientes Personalizados */
+        .gold-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e423 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e423 100%);
+        }
+        
+        .mm-gradient {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
+        /* Fundo da Seção Hero */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/fundo.avif') center/cover no-repeat;
+        }
+        
+        /* Efeitos de Hover para Cards */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .case-study-card {
+            transition: transform 0.3s ease;
+        }
+        .case-study-card:hover {
+            transform: scale(1.03);
+        }
+
+        /* Estilo do Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
-  <!-- Header -->
-  <header class="fixed w-full bg-gradient-to-r from-blue-900 to-blue-800 text-white z-50 shadow-xl">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <a href="#home" class="text-2xl font-bold text-white hover:text-blue-200 transition">
-          <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/lOGOmm.png" alt="MM Digital Logo" class="h-12">
-        </a>
-      </div>
-
-
-<nav class="hidden md:flex space-x-8">
-
-<a href="#home" class="hover:text-blue-400 transition">Início</a>
-
-<a href="#about" class="hover:text-yellow-400 transition">Sobre</a>
-
-<a href="#services" class="hover:text-yellow-400 transition">Serviços</a>
-
-<a href="#cases" class="hover:text-yellow-400 transition">Cases</a>
-
-<a href="#testimonials" class="hover:text-yellow-400 transition">Depoimentos</a>
-
-<a href="#blog" class="hover:text-yellow-400 transition">Blog</a>
-
-<a href="#contact" class="hover:text-yellow-400 transition">Contato</a>
-
-</nav>
-
-
-<a href="#contact" class="gold-gradient text-black font-bold px-6 py-2 rounded-full hover:opacity-90 transition">
-
-Solicitar Proposta
-
-</a>
-
-
-<!-- Mobile menu button -->
-
-<button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-
-<i class="fas fa-bars text-2xl"></i>
-
-</button>
-
-</div>
-
-
-<!-- Mobile menu -->
-
-<div class="md:hidden hidden bg-black w-full px-4 py-4 absolute top-full left-0" id="mobile-menu">
-
-<div class="container mx-auto">
-
-<a href="#home" class="block py-2 hover:text-yellow-400 transition">Início</a>
-
-<a href="#about" class="block py-2 hover:text-yellow-400 transition">Sobre</a>
-
-<a href="#services" class="block py-2 hover:text-yellow-400 transition">Serviços</a>
-
-<a href="#cases" class="block py-2 hover:text-yellow-400 transition">Cases</a>
-
-<a href="#testimonials" class="block py-2 hover:text-yellow-400 transition">Depoimentos</a>
-
-<a href="#blog" class="block py-2 hover:text-yellow-400 transition">Blog</a>
-
-<a href="#contact" class="block py-2 hover:text-yellow-400 transition">Contato</a>
-
-</div>
-
-</div>
-
-</header>
-
-
-
-<!-- Hero Section -->
-
-<section id="home" class="hero-section min-h-screen flex items-center pt-20 relative overflow-hidden">
-
-<div class="absolute inset-0 bg-blue-900 opacity-10"></div>
-
-<div class="container mx-auto px-4 py-20 text-white relative z-10">
-
-<div class="max-w-2xl">
-
-<div class="blue-gradient text-white inline-block px-4 py-2 rounded-full mb-4">
-
-<span class="flex items-center">
-
-<i class="fas fa-bolt mr-2"></i> ALTA PERFORMANCE
-
-</span>
-
-</div>
-
-<h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-
-Pare de desperdiçar dinheiro com <span class="gold-text">tráfego que não converte</span>
-
-</h1>
-
-<p class="text-xl md:text-2xl mb-8 text-gray-300">
-
-Na MM Digital, cada clique conta. Gestão de tráfego pago e criativos que realmente vendem.
-
-</p>
-
-<div class="flex flex-wrap gap-4">
-
-<a href="#contact" class="gold-gradient text-black font-bold px-8 py-3 rounded-full hover:opacity-90 transition text-lg">
-
-Solicitar Proposta
-
-</a>
-
-<a href="#cases" class="bg-transparent border-2 border-yellow-400 text-white font-bold px-8 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition text-lg">
-
-Ver Resultados
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Wave divider -->
-
-<div class="relative -mt-1 h-20 overflow-hidden">
-
-<svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="absolute w-full h-full top-0 left-0">
-
-<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="fill-blue-800"></path>
-
-<path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8c40.92-19,84.73-46,130.83-49.67c36.26-2.85,70.9,9.42,98.6,31.56c31.77,25.39,62.32,62,103.63,73c40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84c30.2,8.66,59,6.17,87.09-7.5c22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="fill-blue-600"></path>
-
-<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46c59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="fill-blue-400"></path>
-
-</svg>
-
-</div>
-
-
-
-<!-- About Section -->
-
-<section id="about" class="py-20 bg-white">
-
-<div class="container mx-auto px-4">
-
-<div class="flex flex-col md:flex-row items-center gap-12">
-
-<div class="md:w-1/2">
-
-<img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/msmadureira.png"
-
-alt="Marcelo Madureira"
-
-class="rounded-lg shadow-xl w-full h-auto">
-
-</div>
-
-<div class="md:w-1/2">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-6">
-
-Sobre a <span class="gold-text">MM Digital</span>
-
-</h2>
-
-<p class="text-lg mb-6 text-gray-700">
-
-A MM Digital é uma agência de marketing especializada em tráfego pago e estratégias de performance, conduzida por quem conhece o caminho — <span class="font-bold">Marcelo Madureira</span>, um profissional com visão prática, sensibilidade criativa e profundo entendimento do comportamento digital.
-
-</p>
-
-<p class="text-lg mb-8 text-gray-700">
-
-Ao longo dos anos, Marcelo se consolidou como referência para empresas que desejam escalar seus resultados de forma inteligente. Combinando experiência no campo com uma leitura afiada de mercado, ele desenvolveu uma abordagem estratégica que une dados, conteúdo e conversão com foco total em resultado.
-
-</p>
-
-<p class="text-lg mb-8 text-gray-700">
-
-A MM Digital não entrega números vazios. Cada campanha nasce com propósito, baseada em análise de público, criativos inteligentes e segmentações que respeitam o ciclo de decisão de quem está do outro lado da tela. O que diferencia o trabalho aqui não é só a técnica, mas a forma como cada marca é tratada: com proximidade, compromisso e atenção ao detalhe.
-
-</p>
-
-<p class="text-lg mb-8 text-gray-700">
-
-A agência atende negócios que desejam mais do que curtidas — querem crescimento sustentável, reconhecimento e vendas. De pequenos empreendedores a grandes operações, o foco é um só: transformar presença online em valor real.
-
-</p>
-
-<p class="text-lg mb-8 text-gray-700">
-
-Com atuação full-service, a MM Digital oferece soluções completas — do planejamento estratégico à execução e otimização contínua. Tudo é conduzido com clareza, responsabilidade e total transparência, marcas registradas do trabalho de Marcelo e de sua equipe.
-
-</p>
-
-<p class="text-lg mb-8 text-gray-700">
-
-Credibilidade, estratégia e entrega. Essa é a MM Digital.
-
-</p>
-
-<div class="flex flex-wrap gap-4">
-
-<div class="flex items-center">
-
-<div class="bg-yellow-400 rounded-full p-2 mr-3">
-
-<i class="fas fa-check text-black"></i>
-
-</div>
-
-<span>Resultados Comprovados</span>
-
-</div>
-
-<div class="flex items-center">
-
-<div class="bg-yellow-400 rounded-full p-2 mr-3">
-
-<i class="fas fa-check text-black"></i>
-
-</div>
-
-<span>Atendimento Personalizado</span>
-
-</div>
-
-<div class="flex items-center">
-
-<div class="bg-yellow-400 rounded-full p-2 mr-3">
-
-<i class="fas fa-check text-black"></i>
-
-</div>
-
-<span>Estratégias Data-Driven</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Services Section -->
-
-<section id="services" class="py-20 bg-gray-100">
-
-<div class="container mx-auto px-4">
-
-<div class="text-center mb-16">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-Nossos <span class="gold-text">Serviços</span>
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-
-Soluções completas para alavancar seu negócio no digital
-
-</p>
-
-</div>
-
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-<!-- Service 1 -->
-
-<div class="service-card bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition duration-300 border-l-4 border-blue-500">
-
-<div class="blue-gradient rounded-lg w-16 h-16 flex items-center justify-center mb-6 transform rotate-12">
-
-<i class="fas fa-bullseye text-2xl text-white"></i>
-
-</div>
-
-<h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
-
-<p class="text-gray-600 mb-4">
-
-Campanhas otimizadas no Meta Ads, TikTok Ads e Google Ads com funis validados para máxima conversão.
-
-</p>
-
-<a href="#contact" class="text-yellow-600 font-semibold hover:underline">
-
-Quero esse serviço <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-
-<!-- Service 2 -->
-
-<div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-
-<div class="gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6">
-
-<i class="fas fa-users text-2xl text-black"></i>
-
-</div>
-
-<h3 class="text-xl font-bold mb-3">Social Media</h3>
-
-<p class="text-gray-600 mb-4">
-
-Criação de posts, reels, interações e gestão com linguagem estratégica para engajar seu público.
-
-</p>
-
-<a href="#contact" class="text-yellow-600 font-semibold hover:underline">
-
-Quero esse serviço <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-
-<!-- Service 3 -->
-
-<div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-
-<div class="gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6">
-
-<i class="fas fa-photo-film text-2xl text-black"></i>
-
-</div>
-
-<h3 class="text-xl font-bold mb-3">Criativos de Alta Conversão</h3>
-
-<p class="text-gray-600 mb-4">
-
-Reels com roteiro, VSLs, thumbnails e artes profissionais para campanhas que realmente convertem.
-
-</p>
-
-<a href="#contact" class="text-yellow-600 font-semibold hover:underline">
-
-Quero esse serviço <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-
-<!-- Service 4 -->
-
-<div class="service-card bg-white rounded-xl p-8 shadow-md transition duration-300">
-
-<div class="gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6">
-
-<i class="fas fa-chart-line text-2xl text-black"></i>
-
-</div>
-
-<h3 class="text-xl font-bold mb-3">Consultoria Estratégica</h3>
-
-<p class="text-gray-600 mb-4">
-
-Diagnóstico completo da sua presença digital e plano de crescimento personalizado para seu negócio.
-
-</p>
-
-<a href="#contact" class="text-yellow-600 font-semibold hover:underline">
-
-Quero esse serviço <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Case Studies Section -->
-
-<section id="cases" class="py-20 bg-white">
-
-<div class="container mx-auto px-4">
-
-<div class="text-center mb-16">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-Cases de <span class="gold-text">Sucesso</span>
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-
-Resultados reais que entregamos para nossos clientes
-
-</p>
-
-</div>
-
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-<!-- Case 1 -->
-
-<div class="case-study-card bg-gradient-to-b from-gray-900 to-blue-900 rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-500">
-
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=781&q=80"
-
-alt="Don Pizza Delivery"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">Don Pizza Delivery</h3>
-
-<p class="text-gray-600 mb-4 font-semibold">Aumento de 10x nos pedidos</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Desafio:</span> Baixo movimento nas redes e pedidos estagnados
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Solução:</span> Social media + tráfego + criativos em reels
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Resultado:</span> De 10 para 100 pedidos/dia em 60 dias
-
-</p>
-
-<div class="flex justify-center mt-4">
-
-<img src="https://via.placeholder.com/300x150?text=Dashboard+de+Resultados"
-
-alt="Resultados"
-
-class="rounded border border-gray-200">
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Case 2 -->
-
-<div class="case-study-card bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-
-alt="Bella Skin Estética"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">Bella Skin Estética</h3>
-
-<p class="text-gray-600 mb-4 font-semibold">Agenda 100% preenchida</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Desafio:</span> Baixa agenda preenchida e visibilidade nula no Instagram
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Solução:</span> Estruturação de branding + reels + tráfego local com segmentação
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Resultado:</span> Agendas 100% preenchidas em menos de 45 dias
-
-</p>
-
-<div class="flex justify-center mt-4">
-
-<img src="https://via.placeholder.com/300x150?text=Print+Instagram"
-
-alt="Resultados Instagram"
-
-class="rounded border border-gray-200">
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Case 3 -->
-
-<div class="case-study-card bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-
-alt="Clube da Automação Web"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">Clube da Automação Web</h3>
-
-<p class="text-gray-600 mb-4 font-semibold">ROI de 8.3x em lançamento</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Desafio:</span> Lote de lançamento com poucas vendas
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Solução:</span> Reestruturação de página, criativos, reels e campanhas de conversão
-
-</p>
-
-<p class="text-gray-600 mb-4">
-
-<span class="font-bold">Resultado:</span> R$ 25 mil em faturamento com investimento de R$ 3.000,00
-
-</p>
-
-<div class="flex justify-center mt-4">
-
-<img src="https://via.placeholder.com/300x150?text=Meta+Ads+Manager"
-
-alt="Meta Ads Manager"
-
-class="rounded border border-gray-200">
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Testimonials Section -->
-
-<section id="testimonials" class="py-20 bg-gray-100">
-
-<div class="container mx-auto px-4">
-
-<div class="text-center mb-16">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-O que dizem <span class="gold-text">nossos clientes</span>
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-
-Depoimentos reais de quem já transformou seu negócio com a MM Digital
-
-</p>
-
-</div>
-
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-<!-- Testimonial 1 -->
-
-<div class="testimonial-card bg-white rounded-xl p-8">
-
-<div class="flex items-center mb-4">
-
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-
-<img src="https://randomuser.me/api/portraits/women/44.jpg"
-
-alt="Bruna Souza"
-
-class="w-full h-full object-cover">
-
-</div>
-
-<div>
-
-<h4 class="font-bold">Bruna Souza</h4>
-
-<p class="text-gray-600 text-sm">Empreendedora de Moda</p>
-
-</div>
-
-</div>
-
-<p class="text-gray-700 italic">
-
-"Fechar com a MM foi a melhor decisão do meu negócio. Não fiquei mais sem clientes. O atendimento é próximo e os resultados aparecem rápido."
-
-</p>
-
-<div class="flex mt-4 text-yellow-400">
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-</div>
-
-</div>
-
-
-<!-- Testimonial 2 -->
-
-<div class="testimonial-card bg-white rounded-xl p-8">
-
-<div class="flex items-center mb-4">
-
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-
-<img src="https://randomuser.me/api/portraits/men/32.jpg"
-
-alt="Carlos Lira"
-
-class="w-full h-full object-cover">
-
-</div>
-
-<div>
-
-<h4 class="font-bold">Carlos Lira</h4>
-
-<p class="text-gray-600 text-sm">Coach Digital</p>
-
-</div>
-
-</div>
-
-<p class="text-gray-700 italic">
-
-"O Marcelo entende de mídia como poucos. Além de estrategista, virou parte da minha equipe. Super recomendo a MM Digital para quem quer resultados."
-
-</p>
-
-<div class="flex mt-4 text-yellow-400">
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-</div>
-
-</div>
-
-
-<!-- Testimonial 3 -->
-
-<div class="testimonial-card bg-white rounded-xl p-8">
-
-<div class="flex items-center mb-4">
-
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-
-<img src="https://randomuser.me/api/portraits/women/68.jpg"
-
-alt="Juliane Ramos"
-
-class="w-full h-full object-cover">
-
-</div>
-
-<div>
-
-<h4 class="font-bold">Juliane Ramos</h4>
-
-<p class="text-gray-600 text-sm">Esteticista</p>
-
-</div>
-
-</div>
-
-<p class="text-gray-700 italic">
-
-"Saí do zero para mais de 10 mil seguidores com o plano social da MM. Resultados reais! Minha agenda nunca esteve tão cheia."
-
-</p>
-
-<div class="flex mt-4 text-yellow-400">
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-<i class="fas fa-star"></i>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Comparison Section -->
-
-<section class="py-20 bg-white">
-
-<div class="container mx-auto px-4">
-
-<div class="text-center mb-16">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-MM Digital vs <span class="gold-text">Agências Tradicionais</span>
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-
-Entenda por que somos a melhor escolha para seu negócio
-
-</p>
-
-</div>
-
-
-<div class="overflow-x-auto">
-
-<table class="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
-
-<thead class="bg-black text-white">
-
-<tr>
-
-<th class="py-4 px-6 text-left">Característica</th>
-
-<th class="py-4 px-6 text-left">MM Digital</th>
-
-<th class="py-4 px-6 text-left">Agências Tradicionais</th>
-
-</tr>
-
-</thead>
-
-<tbody class="divide-y divide-gray-200">
-
-<tr>
-
-<td class="py-4 px-6 font-semibold">Atendimento</td>
-
-<td class="py-4 px-6">Direto com o especialista</td>
-
-<td class="py-4 px-6">Vários setores e burocracia</td>
-
-</tr>
-
-<tr class="bg-gray-50">
-
-<td class="py-4 px-6 font-semibold">Preço</td>
-
-<td class="py-4 px-6">Justo e acessível</td>
-
-<td class="py-4 px-6">Altos custos fixos</td>
-
-</tr>
-
-<tr>
-
-<td class="py-4 px-6 font-semibold">Resultados</td>
-
-<td class="py-4 px-6">Práticos e mensuráveis</td>
-
-<td class="py-4 px-6">Lentos e genéricos</td>
-
-</tr>
-
-<tr class="bg-gray-50">
-
-<td class="py-4 px-6 font-semibold">Foco</td>
-
-<td class="py-4 px-6">Vendas e conversão direta</td>
-
-<td class="py-4 px-6">Branding e mídia institucional</td>
-
-</tr>
-
-<tr>
-
-<td class="py-4 px-6 font-semibold">Agilidade</td>
-
-<td class="py-4 px-6">Alta</td>
-
-<td class="py-4 px-6">Baixa</td>
-
-</tr>
-
-<tr class="bg-gray-50">
-
-<td class="py-4 px-6 font-semibold">Proximidade</td>
-
-<td class="py-4 px-6">Total com o cliente</td>
-
-<td class="py-4 px-6">Fria e distante</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Blog Section -->
-
-<section id="blog" class="py-20 bg-gray-100">
-
-<div class="container mx-auto px-4">
-
-<div class="text-center mb-16">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-Conteúdo <span class="gold-text">Exclusivo</span>
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-
-Artigos para você dominar o marketing digital
-
-</p>
-
-</div>
-
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-<!-- Post 1 -->
-
-<div class="bg-white rounded-xl overflow-hidden shadow-lg">
-
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-
-alt="5 erros no tráfego pago"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-3">5 erros que estão fazendo você perder dinheiro com tráfego pago</h3>
-
-<p class="text-gray-600 mb-4">
-
-Descubra os erros mais comuns que sabotam suas campanhas e como evitá-los para maximizar seu ROI.
-
-</p>
-
-<a href="#" class="text-yellow-600 font-semibold hover:underline">
-
-Ler artigo <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- Post 2 -->
-
-<div class="bg-white rounded-xl overflow-hidden shadow-lg">
-
-<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-
-alt="Criativos que convertem"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-3">Criativos que convertem: como montar um Reels matador</h3>
-
-<p class="text-gray-600 mb-4">
-
-Aprenda a estrutura por trás dos Reels que geram engajamento e vendas para seu negócio.
-
-</p>
-
-<a href="#" class="text-yellow-600 font-semibold hover:underline">
-
-Ler artigo <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- Post 3 -->
-
-<div class="bg-white rounded-xl overflow-hidden shadow-lg">
-
-<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-
-alt="Atrair clientes no Instagram"
-
-class="w-full h-48 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-3">Como atrair mais clientes no Instagram com estratégia</h3>
-
-<p class="text-gray-600 mb-4">
-
-Estratégias comprovadas para transformar seu Instagram em uma máquina de gerar leads e vendas.
-
-</p>
-
-<a href="#" class="text-yellow-600 font-semibold hover:underline">
-
-Ler artigo <i class="fas fa-arrow-right ml-1"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="text-center mt-12">
-
-<a href="#" class="gold-gradient text-black font-bold px-8 py-3 rounded-full hover:opacity-90 transition inline-block">
-
-Ver todos os artigos
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Contact Form Section -->
-
-<section id="contact" class="py-20 bg-black text-white">
-
-<div class="container mx-auto px-4">
-
-<div class="max-w-4xl mx-auto">
-
-<div class="text-center mb-12">
-
-<h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-Pronto para <span class="gold-text">transformar</span> seu negócio?
-
-</h2>
-
-<p class="text-lg text-gray-300 max-w-2xl mx-auto">
-
-Preencha o formulário abaixo e nossa equipe entrará em contato
-
-</p>
-
-</div>
-
-
-<form class="bg-gradient-to-br from-blue-900 to-gray-900 rounded-2xl p-8 shadow-2xl border border-blue-700/50">
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
-<div>
-
-<label for="name" class="block mb-2 font-medium">Nome completo*</label>
-
-<input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-
-</div>
-
-<div>
-
-<label for="email" class="block mb-2 font-medium">E-mail*</label>
-
-<input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-
-</div>
-
-<div>
-
-<label for="whatsapp" class="block mb-2 font-medium">WhatsApp*</label>
-
-<input type="tel" id="whatsapp" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-
-</div>
-
-<div>
-
-<label for="business" class="block mb-2 font-medium">Tipo de negócio*</label>
-
-<select id="business" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-
-<option value="" disabled selected>Selecione</option>
-
-<option value="delivery">Delivery/Restaurante</option>
-
-<option value="local">Negócio Local</option>
-
-<option value="ecommerce">E-commerce</option>
-
-<option value="servicos">Serviços</option>
-
-<option value="infoproduto">Infoproduto</option>
-
-<option value="outro">Outro</option>
-
-</select>
-
-</div>
-
-</div>
-
-
-<div class="mb-6">
-
-<label class="block mb-4 font-medium">Quais serviços você precisa?*</label>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-<div class="flex items-center">
-
-<input type="checkbox" id="traffic" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800">
-
-<label for="traffic">Tráfego Pago</label>
-
-</div>
-
-<div class="flex items-center">
-
-<input type="checkbox" id="social" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800">
-
-<label for="social">Social Media</label>
-
-</div>
-
-<div class="flex items-center">
-
-<input type="checkbox" id="creatives" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800">
-
-<label for="creatives">Criativos</label>
-
-</div>
-
-<div class="flex items-center">
-
-<input type="checkbox" id="consulting" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800">
-
-<label for="consulting">Consultoria</label>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="mb-6">
-
-<label for="message" class="block mb-2 font-medium">Mensagem (opcional)</label>
-
-<textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
-
-</div>
-
-
-<button type="submit" class="gold-gradient text-black font-bold w-full py-4 rounded-lg hover:opacity-90 transition text-lg">
-
-Quero fazer parte da MM Digital
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- Footer -->
-
-<footer class="bg-gray-900 text-white py-12">
-
-<div class="container mx-auto px-4">
-
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-
-<div>
-
-<h3 class="text-2xl font-bold gold-text mb-4">MM DIGITAL</h3>
-
-<p class="text-gray-400">
-
-Marketing digital de alta performance para negócios que querem crescer.
-
-</p>
-
-<div class="flex space-x-4 mt-6">
-
-<a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-
-<i class="fab fa-instagram text-xl"></i>
-
-</a>
-
-<a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-
-<i class="fab fa-tiktok text-xl"></i>
-
-</a>
-
-<a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-
-<i class="fab fa-whatsapp text-xl"></i>
-
-</a>
-
-</div>
-
-</div>
-
-
-<div>
-
-<h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
-
-<ul class="space-y-2">
-
-<li><a href="#home" class="text-gray-400 hover:text-yellow-400 transition">Início</a></li>
-
-<li><a href="#about" class="text-gray-400 hover:text-yellow-400 transition">Sobre</a></li>
-
-<li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Serviços</a></li>
-
-<li><a href="#cases" class="text-gray-400 hover:text-yellow-400 transition">Cases</a></li>
-
-<li><a href="#blog" class="text-gray-400 hover:text-yellow-400 transition">Blog</a></li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<h4 class="text-lg font-bold mb-4">Serviços</h4>
-
-<ul class="space-y-2">
-
-<li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">Tráfego Pago</a></li>
-
-<li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">Social Media</a></li>
-
-<li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">Criativos</a></li>
-
-<li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">Consultoria</a></li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<h4 class="text-lg font-bold mb-4">Contato</h4>
-
-<ul class="space-y-2 text-gray-400">
-
-<li class="flex items-start">
-
-<i class="fas fa-envelope mr-2 mt-1 text-yellow-400"></i>
-
-contato@mmdigital.com.br
-
-</li>
-
-<li class="flex items-start">
-
-<i class="fas fa-phone-alt mr-2 mt-1 text-yellow-400"></i>
-
-(11) 98765-4321
-
-</li>
-
-<li class="flex items-start">
-
-<i class="fas fa-map-marker-alt mr-2 mt-1 text-yellow-400"></i>
-
-São Paulo - SP
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-
-<p>CNPJ: 45.901.148/0001-35 | Instagram: @mmdigital.ofc</p>
-
-<p class="mt-2">© 2023 MM Digital. Todos os direitos reservados.</p>
-
-<p class="mt-2">Este site foi desenvolvido com dedicação por Enzotvs ❤</p>
-
-<div class="flex justify-center space-x-4 mt-4">
-
-<a href="#" class="hover:text-yellow-400 transition">Política de Privacidade</a>
-
-<a href="#" class="hover:text-yellow-400 transition">Termos de Uso</a>
-
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-
-
-<script>
-
-// Mobile menu toggle
-
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-
-const mobileMenu = document.getElementById('mobile-menu');
-
-
-mobileMenuButton.addEventListener('click', () => {
-
-mobileMenu.classList.toggle('hidden');
-
-});
-
-
-// Smooth scrolling for anchor links
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-anchor.addEventListener('click', function (e) {
-
-e.preventDefault();
-
-
-const targetId = this.getAttribute('href');
-
-const targetElement = document.querySelector(targetId);
-
-
-if (targetElement) {
-
-window.scrollTo({
-
-top: targetElement.offsetTop - 80,
-
-behavior: 'smooth'
-
-});
-
-
-// Close mobile menu if open
-
-if (!mobileMenu.classList.contains('hidden')) {
-
-mobileMenu.classList.add('hidden');
-
-}
-
-}
-
-});
-
-});
-
-
-// Add shadow to header on scroll
-
-window.addEventListener('scroll', () => {
-
-const header = document.querySelector('header');
-
-if (window.scrollY > 50) {
-
-header.classList.add('shadow-xl');
-
-} else {
-
-header.classList.remove('shadow-xl');
-
-}
-
-});
-
-</script>
-
-<!-- Start of Tawk.to Script -->
-
-<script type="text/javascript">
-
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
-(function(){
-
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-
-s1.async=true;
-
-s1.src='https://embed.tawk.to/CHAT_ID_HERE/default';
-
-s1.charset='UTF-8';
-
-s1.setAttribute('crossorigin','*');
-
-s0.parentNode.insertBefore(s1,s0);
-
-})();
-
-</script>
-
-<!-- End of Tawk.to Script -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="header" class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-sm text-white z-50 transition-shadow duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
+            <a href="#home" class="flex-shrink-0">
+                <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/lOGOmm.png" alt="MM Digital Logo" class="h-12 w-auto">
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-6 text-sm lg:space-x-8 font-medium">
+                <a href="#home" class="hover:text-yellow-400 transition">Início</a>
+                <a href="#about" class="hover:text-yellow-400 transition">Sobre</a>
+                <a href="#services" class="hover:text-yellow-400 transition">Serviços</a>
+                <a href="#cases" class="hover:text-yellow-400 transition">Cases</a>
+                <a href="#testimonials" class="hover:text-yellow-400 transition">Depoimentos</a>
+                <a href="#blog" class="hover:text-yellow-400 transition">Blog</a>
+                <a href="#contact" class="hover:text-yellow-400 transition">Contato</a>
+            </nav>
+            
+            <a href="#contact" class="hidden md:inline-block gold-gradient text-black font-bold px-6 py-2 rounded-full hover:opacity-90 transition text-sm">
+                Solicitar Proposta
+            </a>
+            
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button" aria-label="Abrir menu">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div class="md:hidden hidden bg-black/95" id="mobile-menu">
+            <div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col items-center space-y-4">
+                <a href="#home" class="block py-2 hover:text-yellow-400 transition nav-link">Início</a>
+                <a href="#about" class="block py-2 hover:text-yellow-400 transition nav-link">Sobre</a>
+                <a href="#services" class="block py-2 hover:text-yellow-400 transition nav-link">Serviços</a>
+                <a href="#cases" class="block py-2 hover:text-yellow-400 transition nav-link">Cases</a>
+                <a href="#testimonials" class="block py-2 hover:text-yellow-400 transition nav-link">Depoimentos</a>
+                <a href="#blog" class="block py-2 hover:text-yellow-400 transition nav-link">Blog</a>
+                <a href="#contact" class="block py-2 hover:text-yellow-400 transition nav-link">Contato</a>
+                <a href="#contact" class="gold-gradient text-black font-bold px-8 py-3 mt-4 rounded-full hover:opacity-90 transition text-lg text-center w-full max-w-xs nav-link">
+                    Solicitar Proposta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section min-h-screen flex items-center justify-center pt-24 pb-12 text-center text-white relative">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto">
+                    <div class="inline-block bg-blue-500/80 text-white px-4 py-2 rounded-full mb-4 text-sm font-semibold">
+                        <span class="flex items-center"><i class="fas fa-bolt mr-2"></i>ALTA PERFORMANCE</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                        Pare de desperdiçar dinheiro com <span class="gold-text">tráfego que não converte</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                        Na MM Digital, cada clique conta. Gestão de tráfego pago e criativos que realmente vendem.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#contact" class="gold-gradient w-full sm:w-auto text-black font-bold px-8 py-3 rounded-full hover:opacity-90 transition text-lg">
+                            Solicitar Proposta
+                        </a>
+                        <a href="#cases" class="bg-transparent w-full sm:w-auto border-2 border-yellow-400 text-white font-bold px-8 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition text-lg">
+                            Ver Resultados
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-16">
+                    <div class="md:w-5/12 lg:w-4/12 flex-shrink-0">
+                        <img src="https://raw.githubusercontent.com/MarceloMserra/MMdigital/refs/heads/main/msmadureira.png" alt="Marcelo Madureira" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:w-7/12 lg:w-6/12 text-center md:text-left">
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                            Sobre a <span class="gold-text">MM Digital</span>
+                        </h2>
+                        <div class="space-y-4 text-lg text-gray-700">
+                            <p>A MM Digital é uma agência de marketing especializada em tráfego pago e estratégias de performance, conduzida por quem conhece o caminho — <span class="font-bold">Marcelo Madureira</span>, um profissional com visão prática, sensibilidade criativa e profundo entendimento do comportamento digital.</p>
+                            <p>Ao longo dos anos, Marcelo se consolidou como referência para empresas que desejam escalar seus resultados de forma inteligente. Combinando experiência no campo com uma leitura afiada de mercado, ele desenvolveu uma abordagem estratégica que une dados, conteúdo e conversão com foco total em resultado.</p>
+                            <p>A MM Digital não entrega números vazios. Cada campanha nasce com propósito, baseada em análise de público, criativos inteligentes e segmentações que respeitam o ciclo de decisão de quem está do outro lado da tela. O que diferencia o trabalho aqui não é só a técnica, mas a forma como cada marca é tratada: com proximidade, compromisso e atenção ao detalhe.</p>
+                        </div>
+                         <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-4 mt-8 text-gray-800 font-medium">
+                            <div class="flex items-center">
+                                <span class="bg-yellow-400 rounded-full w-7 h-7 flex items-center justify-center mr-3"><i class="fas fa-check text-black text-xs"></i></span>
+                                <span>Resultados Comprovados</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-yellow-400 rounded-full w-7 h-7 flex items-center justify-center mr-3"><i class="fas fa-check text-black text-xs"></i></span>
+                                <span>Atendimento Personalizado</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-yellow-400 rounded-full w-7 h-7 flex items-center justify-center mr-3"><i class="fas fa-check text-black text-xs"></i></span>
+                                <span>Estratégias Data-Driven</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Nossos <span class="gold-text">Serviços</span></h2>
+                    <p class="text-lg text-gray-600">Soluções completas para alavancar seu negócio no digital.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-bullseye text-2xl text-black"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
+                        <p class="text-gray-600 mb-4 text-base">Campanhas otimizadas no Meta, TikTok e Google Ads para máxima conversão.</p>
+                        <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-users text-2xl text-black"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Social Media</h3>
+                        <p class="text-gray-600 mb-4 text-base">Criação de conteúdo e gestão com linguagem estratégica para engajar seu público.</p>
+                        <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-photo-film text-2xl text-black"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Criativos de Alta Conversão</h3>
+                        <p class="text-gray-600 mb-4 text-base">Reels, VSLs, e artes profissionais para campanhas que realmente vendem.</p>
+                        <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="service-card bg-white rounded-xl p-8 text-center shadow-lg">
+                        <div class="mx-auto gold-gradient rounded-full w-16 h-16 flex items-center justify-center mb-6"><i class="fas fa-chart-line text-2xl text-black"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Consultoria Estratégica</h3>
+                        <p class="text-gray-600 mb-4 text-base">Diagnóstico completo e plano de crescimento personalizado para seu negócio.</p>
+                        <a href="#contact" class="text-yellow-600 font-semibold hover:underline">Quero esse serviço <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Cases de <span class="gold-text">Sucesso</span></h2>
+                    <p class="text-lg text-gray-600">Resultados reais que entregamos para nossos clientes.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="case-study-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=781&q=80" alt="Don Pizza Delivery" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Don Pizza Delivery</h3>
+                            <p class="text-gray-600 font-semibold mb-4">Aumento de 10x nos pedidos</p>
+                            <p class="text-gray-700 text-sm"><span class="font-bold">Desafio:</span> Baixo movimento e pedidos estagnados.</p>
+                             <p class="text-gray-700 text-sm"><span class="font-bold">Solução:</span> Social media + tráfego + criativos em reels.</p>
+                            <p class="text-gray-700 text-sm"><span class="font-bold">Resultado:</span> De 10 para 100 pedidos/dia em 60 dias.</p>
+                        </div>
+                    </div>
+                    <div class="case-study-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Bella Skin Estética" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Bella Skin Estética</h3>
+                            <p class="text-gray-600 font-semibold mb-4">Agenda 100% preenchida</p>
+                             <p class="text-gray-700 text-sm"><span class="font-bold">Desafio:</span> Baixa ocupação e visibilidade nula.</p>
+                            <p class="text-gray-700 text-sm"><span class="font-bold">Solução:</span> Branding + reels + tráfego local.</p>
+                            <p class="text-gray-700 text-sm"><span class="font-bold">Resultado:</span> Agenda lotada em menos de 45 dias.</p>
+                        </div>
+                    </div>
+                    <div class="case-study-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Clube da Automação Web" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Clube da Automação</h3>
+                            <p class="text-gray-600 font-semibold mb-4">ROI de 8.3x em lançamento</p>
+                             <p class="text-gray-700 text-sm"><span class="font-bold">Desafio:</span> Lançamento com poucas vendas.</p>
+                             <p class="text-gray-700 text-sm"><span class="font-bold">Solução:</span> Reestruturação de página, criativos e campanhas.</p>
+                            <p class="text-gray-700 text-sm"><span class="font-bold">Resultado:</span> R$ 25 mil faturados com R$ 3 mil de investimento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">O que dizem <span class="gold-text">nossos clientes</span></h2>
+                    <p class="text-lg text-gray-600">Depoimentos reais de quem já transformou seu negócio conosco.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Bruna Souza" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold">Bruna Souza</h4>
+                                <p class="text-gray-600 text-sm">Empreendedora de Moda</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Fechar com a MM foi a melhor decisão do meu negócio. Não fiquei mais sem clientes. O atendimento é próximo e os resultados aparecem rápido."</p>
+                        <div class="flex mt-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Lira" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold">Carlos Lira</h4>
+                                <p class="text-gray-600 text-sm">Coach Digital</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"O Marcelo entende de mídia como poucos. Além de estrategista, virou parte da minha equipe. Super recomendo a MM Digital para quem quer resultados."</p>
+                         <div class="flex mt-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Juliane Ramos" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold">Juliane Ramos</h4>
+                                <p class="text-gray-600 text-sm">Esteticista</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Saí do zero para mais de 10 mil seguidores com o plano social da MM. Resultados reais! Minha agenda nunca esteve tão cheia."</p>
+                         <div class="flex mt-4 text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Conteúdo <span class="gold-text">Exclusivo</span></h2>
+                    <p class="text-lg text-gray-600">Artigos para você dominar o marketing digital.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">5 erros que estão fazendo você perder dinheiro com tráfego pago</h3>
+                            <p class="text-gray-600 mb-4 text-base">Descubra os erros mais comuns que sabotam suas campanhas e como evitá-los.</p>
+                            <a href="#" class="text-yellow-600 font-semibold hover:underline">Ler artigo <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Criativos que convertem: como montar um Reels matador</h3>
+                            <p class="text-gray-600 mb-4 text-base">Aprenda a estrutura por trás dos Reels que geram engajamento e vendas.</p>
+                            <a href="#" class="text-yellow-600 font-semibold hover:underline">Ler artigo <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg case-study-card">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Post do Blog" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Como atrair mais clientes no Instagram com estratégia</h3>
+                            <p class="text-gray-600 mb-4 text-base">Estratégias para transformar seu Instagram em uma máquina de vendas.</p>
+                            <a href="#" class="text-yellow-600 font-semibold hover:underline">Ler artigo <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="gold-gradient text-black font-bold px-8 py-3 rounded-full hover:opacity-90 transition inline-block">Ver todos os artigos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 mm-gradient text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Pronto para <span class="gold-text">transformar</span> seu negócio?</h2>
+                        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
+                    </div>
+                    <form action="#" method="POST" class="bg-black/50 rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-700/50">
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Nome completo*</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">E-mail*</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" required>
+                            </div>
+                             <div>
+                                <label for="whatsapp" class="block mb-2 font-medium">WhatsApp*</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" required>
+                            </div>
+                             <div>
+                                <label for="business" class="block mb-2 font-medium">Tipo de negócio*</label>
+                                <select id="business" name="business" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition" required>
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="delivery">Delivery/Restaurante</option>
+                                    <option value="local">Negócio Local</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="servicos">Serviços</option>
+                                    <option value="infoproduto">Infoproduto</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block mb-4 font-medium">Quais serviços você precisa?*</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div class="flex items-center"><input type="checkbox" id="traffic" name="services[]" value="Trafego" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800"><label for="traffic">Tráfego Pago</label></div>
+                                <div class="flex items-center"><input type="checkbox" id="social" name="services[]" value="Social" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800"><label for="social">Social Media</label></div>
+                                <div class="flex items-center"><input type="checkbox" id="creatives" name="services[]" value="Criativos" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800"><label for="creatives">Criativos</label></div>
+                                <div class="flex items-center"><input type="checkbox" id="consulting" name="services[]" value="Consultoria" class="mr-3 h-5 w-5 text-yellow-400 focus:ring-yellow-400 border-gray-700 rounded bg-gray-800"><label for="consulting">Consultoria</label></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Mensagem (opcional)</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"></textarea>
+                        </div>
+                        <button type="submit" class="gold-gradient text-black font-bold w-full py-4 rounded-lg hover:opacity-90 transition text-lg">
+                            Quero fazer parte da MM Digital
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-2xl font-bold gold-text mb-4">MM DIGITAL</h3>
+                    <p class="text-gray-400 text-sm">Marketing de alta performance para negócios que querem crescer.</p>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition" aria-label="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition" aria-label="WhatsApp"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-400 transition">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-400 transition">Sobre</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Serviços</a></li>
+                        <li><a href="#cases" class="text-gray-400 hover:text-yellow-400 transition">Cases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Tráfego Pago</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Social Media</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Criativos</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Consultoria</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-envelope mr-2 text-yellow-400"></i>contato@mmdigital.com.br</li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-phone-alt mr-2 text-yellow-400"></i>(11) 98765-4321</li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fas fa-map-marker-alt mr-2 text-yellow-400"></i>São Paulo - SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>CNPJ: 45.901.148/0001-35 | Instagram: @mmdigital.ofc</p>
+                <p class="mt-2">© 2024 MM Digital. Todos os direitos reservados.</p>
+                <p class="mt-2">Desenvolvido com ❤ por <a href="#" class="hover:text-yellow-400 transition">Enzotvs</a></p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="hover:text-yellow-400 transition">Política de Privacidade</a>
+                    <a href="#" class="hover:text-yellow-400 transition">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Toggle do menu mobile
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Função para fechar o menu
+            const closeMenu = () => {
+                 mobileMenu.classList.add('hidden');
+            }
+
+            // Fechar menu mobile ao clicar em um link
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            // Sombra no header ao rolar a página
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-xl');
+                } else {
+                    header.classList.remove('shadow-xl');
+                }
+            }, { passive: true });
+
+            // Rolagem suave para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Fecha o menu mobile se estiver aberto
+                        if(!mobileMenu.classList.contains('hidden')) {
+                           closeMenu();
+                        }
+
+                        const headerOffset = header.offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/CHAT_ID_HERE/default'; // <<<--- TROQUE AQUI
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
 </body>
-
 </html>
